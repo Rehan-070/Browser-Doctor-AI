@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Browser Doctor AI - Documentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+    
+    @page {
+      size: A4;
+      margin: 2cm;
+    }
+    
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1f2937;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      font-size: 11pt;
+    }
+    
+    /* Page Break utility */
+    .page {
+      page-break-after: always;
+      position: relative;
+      height: 100%;
+    }
+    
+    .page:last-child {
+      page-break-after: avoid;
+    }
+    
+    /* Cover Page Styling */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 25cm;
+      padding: 2cm;
+      box-sizing: border-box;
+    }
+    
+    .cover-logo {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+    }
+    
+    .cover-logo svg {
+      width: 40px;
+      height: 40px;
+      fill: #ffffff;
+    }
+    
+    .cover-title {
+      font-size: 38pt;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.1;
+      margin: 0 0 1rem 0;
+      letter-spacing: -0.03em;
+    }
+    
+    .cover-subtitle {
+      font-size: 18pt;
+      font-weight: 400;
+      color: #4b5563;
+      margin: 0 0 4rem 0;
+      letter-spacing: -0.01em;
+    }
+    
+    .cover-meta {
+      margin-top: auto;
+      border-top: 2px solid #f3f4f6;
+      padding-top: 2rem;
+      display: grid;
+      grid-template-cols: 1fr 1fr;
+      gap: 1rem;
+    }
+    
+    .meta-item {
+      font-size: 10pt;
+      color: #6b7280;
+    }
+    
+    .meta-label {
+      font-weight: 700;
+      color: #374151;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+    
+    /* Standard Layout */
+    h1 {
+      font-size: 22pt;
+      font-weight: 800;
+      color: #111827;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #10b981;
+      padding-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    
+    h2 {
+      font-size: 15pt;
+      font-weight: 700;
+      color: #1f2937;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    
+    h3 {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #374151;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+    
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      padding-left: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Card Grid and Callouts */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .card {
+      background-color: #f9fafb;
+      border: 1px solid #f3f4f6;
+      border-radius: 12px;
+      padding: 1.2rem;
+    }
+    
+    .card h3 {
+      margin-top: 0;
+      color: #059669;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      background-color: #ecfdf5;
+      color: #047857;
+      border-radius: 6px;
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .callout {
+      border-left: 4px solid #10b981;
+      background-color: #f0fdf4;
+      padding: 1rem 1.2rem;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 1.5rem;
+    }
+    
+    .callout-title {
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 0.25rem;
+    }
+    
+    /* Table styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      font-size: 10pt;
+    }
+    
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    th {
+      background-color: #f9fafb;
+      font-weight: 700;
+      color: #374151;
+    }
+    
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 0.5rem;
+      font-size: 9pt;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: COVER -->
+  <div class="page">
+    <div class="cover">
+      <div class="cover-logo">
+        <!-- SVG cross logo matching the Chrome Extension icon -->
+        <svg viewBox="0 0 24 24">
+          <path d="M19 10.5h-5.5V5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v5.5H5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h5.5V19c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5.5H19c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z"/>
+        </svg>
+      </div>
+      <h1 class="cover-title">Browser Doctor AI</h1>
+      <p class="cover-subtitle">Product Launch Documentation & Publishing Guide</p>
+      
+      <div class="cover-meta">
+        <div class="meta-item">
+          <div class="meta-label">Prepared For</div>
+          <div>Chrome Web Store Deployment</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Version</div>
+          <div>1.0.0 (Manifest V3 MVP)</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Date</div>
+          <div>July 2026</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Status</div>
+          <div>Production-Ready</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: EXECUTIVE SUMMARY & FEATURES -->
+  <div class="page">
+    <h1>Executive Summary</h1>
+    <p>
+      <strong>Browser Doctor AI</strong> is a modern, lightweight, and event-driven Google Chrome extension built to optimize browser resources without degrading active user experiences. Unlike traditional browser managers that consume high background memory or poll system metrics constantly, Browser Doctor AI uses an intelligent estimation logic to measure page complexity (DOM size, mutations, media objects) and reactively suspends inactive background tabs using Chrome's native discard mechanism.
+    </p>
+    <p>
+      Designed with a minimalist, premium aesthetic inspired by applications like Arc Browser, Raycast, and Linear, this extension blends into the web browser as an integrated OS-level utility.
+    </p>
+
+    <h1>Core Features</h1>
+    <div class="grid">
+      <div class="card">
+        <h3>Floating Health Bubble</h3>
+        <p>
+          A non-intrusive, draggable pill widget injected into the page via a Shadow DOM. Displays a real-time health score from 0–100 and status color dot. Semi-transparent when idle, expanding slightly upon hover.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Memory Scoring Engine</h3>
+        <p>
+          Calculates per-tab weights using DOM node count, media counts (images/videos), active WebGL/canvas contexts, iframes, script declarations, and live DOM mutation frequency.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Mini Diagnostics Panel</h3>
+        <p>
+          Opens directly on the page when clicking the floating bubble. Offers a quick, lightweight snapshot of heavy tabs, duplicates, idle tabs, and overall rating.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Full Performance Dashboard</h3>
+        <p>
+          A dedicated, full-page dashboard compiled with React, TypeScript, and Tailwind CSS. Contains detailed metrics, a SVG performance timeline graph, diagnostic lists, and settings options.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Browser Doctor AI Product Guide</span>
+      <span>Page 2</span>
+    </div>
+  </div>
+
+  <!-- PAGE 3: HOW TO USE & MANAGE -->
+  <div class="page">
+    <h1>How to Use & Manage</h1>
+    <p>
+      Operating Browser Doctor AI is designed to be frictionless, requiring no initial setup or account registration. The extension begins running diagnostics immediately after installation.
+    </p>
+    
+    <h2>1. Finding the Floating Bubble</h2>
+    <p>
+      Once loaded, navigate to any webpage. The green, blue, yellow, or red pill is anchored to the top-right corner by default. You can drag and position it to any quadrant. The position is stored across page loads.
+    </p>
+
+    <h2>2. Triggering One-Click Optimizations</h2>
+    <p>
+      When the browser health drops (e.g. below 70%), you can open the mini-panel or full dashboard to run optimizations:
+    </p>
+    <ul>
+      <li><strong>Close Duplicates:</strong> Instantly compares all open tabs' URLs, matching titles and domains, keeping the first occurrence and closing redundant tabs.</li>
+      <li><strong>Suspend Idle Tabs:</strong> Recovers memory from tabs inactive for >15 minutes. Under the hood, this triggers the native <code>chrome.tabs.discard()</code> API, which fully unloads the tab's memory while keeping its tab header in Chrome for instant reload when clicked.</li>
+    </ul>
+
+    <h2>3. Customizing settings</h2>
+    <p>
+      Go to the Settings panel inside the dashboard to toggle preference configurations:
+    </p>
+    <div class="callout">
+      <div class="callout-title">Key Customizations Available</div>
+      <p style="margin: 0; font-size: 10pt;">
+        Adjust bubble size (Small, Medium, Large) to fit high DPI displays; modify the notification toggle; adjust health score threshold sliders; and toggle the auto-launch dashboard feature on startup.
+      </p>
+    </div>
+
+    <div class="footer">
+      <span>Browser Doctor AI Product Guide</span>
+      <span>Page 3</span>
+    </div>
+  </div>
+
+  <!-- PAGE 4: ADVANTAGES & DEPLOYMENT CHECKLIST -->
+  <div class="page">
+    <h1>Competitive Advantages</h1>
+    <p>
+      Most browser managers suffer from design and performance issues. Here is how Browser Doctor AI outclasses competing products:
+    </p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Metric / Quality</th>
+          <th>Standard Extensions</th>
+          <th>Browser Doctor AI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Host Page Footprint</strong></td>
+          <td>High (bundles React/jQuery directly onto user pages)</td>
+          <td>Minimal (&lt; 12KB vanilla script, isolated in Shadow DOM)</td>
+        </tr>
+        <tr>
+          <td><strong>CPU Overhead</strong></td>
+          <td>Heavy polling intervals querying tabs continuously</td>
+          <td>Event-driven listeners and throttled mutation observers</td>
+        </tr>
+        <tr>
+          <td><strong>Memory Suspension</strong></td>
+          <td>Replaces tabs with heavy redirect pages</td>
+          <td>Triggers native Chrome memory discard seamlessly</td>
+        </tr>
+        <tr>
+          <td><strong>Design Aesthetics</strong></td>
+          <td>Generic, cluttered, and outdated UI grids</td>
+          <td>Premium glassmorphism layouts matching modern OS tools</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Web Store Publishing Checklist</h1>
+    <p>
+      Before submitting to the Chrome Web Store Developer Console, complete the following pre-publishing verification steps:
+    </p>
+    <ol>
+      <li><strong>Confirm Build Size:</strong> Verify the <code>content.js</code> is less than 50 KB (our build is ~11 KB).</li>
+      <li><strong>Permissions Check:</strong> Ensure only <code>storage</code>, <code>tabs</code>, and <code>notifications</code> are requested to satisfy the Store's "Least Privilege" security review.</li>
+      <li><strong>Prepare Asset Pack:</strong> The store requires promotional images (440x280 small tile, 1400x560 marquee) and the generated 16x16, 32x32, 48x48, and 128x128 icons inside the <code>dist/</code> folder.</li>
+      <li><strong>Privacy Policy URL:</strong> Chrome requires a policy link since the extension checks tab URLs to identify duplicate pages. Data is strictly processed locally on-device.</li>
+    </ol>
+
+    <div class="footer">
+      <span>Browser Doctor AI Product Guide</span>
+      <span>Page 4</span>
+    </div>
+  </div>
+
+</body>
+</html>
